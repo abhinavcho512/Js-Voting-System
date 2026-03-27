@@ -5,7 +5,7 @@ document
 
 		const electionName = document.getElementById("electionName").value;
 		const requestData = { electionName: electionName };
-		fetch(`http://localhost:8080/api/election-result/declare`, {
+		fetch(`https://online-voting-application-production.up.railway.app/api/election-result/declare`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(requestData),

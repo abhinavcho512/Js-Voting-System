@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Load all candidates
 function loadCandidates() {
-	fetch("http://localhost:8080/api/candidate")
+	fetch("https://online-voting-application-production.up.railway.app/api/candidate")
 		.then((res) => res.json())
 		.then((data) => {
 			let candidatesContainer = document.getElementById("candidatesContainer");
@@ -36,7 +36,7 @@ document
 			party: document.getElementById("party").value,
 		};
 
-		fetch("http://localhost:8080/api/candidate/add", {
+		fetch("https://online-voting-application-production.up.railway.app/api/candidate/add", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -56,7 +56,7 @@ function searchCandidate() {
 	let candidateId = prompt("Enter Candidate ID:");
 	if (!candidateId) return;
 
-	fetch(`http://localhost:8080/api/candidate/${candidateId}`)
+	fetch(`https://online-voting-application-production.up.railway.app/api/candidate/${candidateId}`)
 		.then((res) => res.json())
 		.then((candidate) => {
 			Swal.fire({
@@ -115,7 +115,7 @@ function editCandidate(candidateId) {
 
 // Function to send updated candidate details to backend
 function updateCandidate(candidateId, newName, newParty) {
-	fetch(`http://localhost:8080/api/candidate/update/${candidateId}`, {
+	fetch(`https://online-voting-application-production.up.railway.app/api/candidate/update/${candidateId}`, {
 		method: "PUT",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({ name: newName, party: newParty }),
@@ -138,7 +138,7 @@ function deleteCandidate(id) {
 		confirmButtonText: "Yes, delete it!",
 	}).then((result) => {
 		if (result.isConfirmed) {
-			fetch(`http://localhost:8080/api/candidate/delete/${id}`, {
+			fetch(`https://online-voting-application-production.up.railway.app/api/candidate/delete/${id}`, {
 				method: "DELETE",
 			})
 				.then(() => {

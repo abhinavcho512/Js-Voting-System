@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Load all voters
 function loadVoters() {
-	fetch("http://localhost:8080/api/voters")
+	fetch("https://online-voting-application-production.up.railway.app/api/voters")
 		.then((res) => res.json())
 		.then((data) => {
 			let votersContainer = document.getElementById("votersContainer");
@@ -37,7 +37,7 @@ document
 			email: document.getElementById("email").value,
 		};
 
-		fetch("http://localhost:8080/api/voters/register", {
+		fetch("https://online-voting-application-production.up.railway.app/api/voters/register", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(voterData),
@@ -62,7 +62,7 @@ function deleteVoter(id) {
 		confirmButtonText: "Yes, delete it!",
 	}).then((result) => {
 		if (result.isConfirmed) {
-			fetch(`http://localhost:8080/api/voters/delete/${id}`, {
+			fetch(`https://online-voting-application-production.up.railway.app/api/voters/delete/${id}`, {
 				method: "DELETE",
 			})
 				.then(() => {

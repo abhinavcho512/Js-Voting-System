@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Load candidates for voting
 function loadCandidates() {
-	fetch("http://localhost:8080/api/candidate")
+	fetch("https://online-voting-application-production.up.railway.app/api/candidate")
 		.then((res) => res.json())
 		.then((data) => {
 			let candidateSelect = document.getElementById("candidateSelect");
@@ -23,7 +23,7 @@ function loadCandidates() {
 
 // Load votes
 function loadVotes() {
-	fetch("http://localhost:8080/api/votes")
+	fetch("https://online-voting-application-production.up.railway.app/api/votes")
 		.then((res) => res.json())
 		.then((data) => {
 			let votesTable = document.getElementById("votesTable");
@@ -58,7 +58,7 @@ document
 			return;
 		}
 
-		fetch("http://localhost:8080/api/votes/cast", {
+		fetch("https://online-voting-application-production.up.railway.app/api/votes/cast", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(voteData),
