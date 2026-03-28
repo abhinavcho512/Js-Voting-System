@@ -24,6 +24,24 @@ body {
 	color: white !important;
 }
 
+/* ✅ NEW: Mobile Navbar Fix */
+.navbar-toggler {
+	border-color: white;
+}
+
+.navbar-toggler-icon {
+	filter: invert(1);
+}
+
+/* ✅ NEW: Mobile Menu Alignment */
+@media (max-width: 991px) {
+	.navbar-nav {
+		background: rgba(0, 0, 0, 0.8);
+		padding: 10px;
+		border-radius: 8px;
+	}
+}
+
 /* Hero Section */
 .hero {
 	background: rgba(255, 152, 0, 0.8);
